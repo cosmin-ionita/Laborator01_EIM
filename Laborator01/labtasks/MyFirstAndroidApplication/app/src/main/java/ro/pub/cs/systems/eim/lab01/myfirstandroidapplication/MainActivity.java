@@ -21,9 +21,16 @@ public class MainActivity extends AppCompatActivity {
             TextView greetingTextView = (TextView)findViewById(R.id.greeting_text_view);
             greetingTextView.setAlpha(1);
 
-            // TODO: exercise 9a
+           
 
-            // TODO: exercise 9b
+	    greetingTextView.setText(greetingTextView.getText().toString().replace("xxx", "\n"+userNameEditText.getText()));
+
+         
+
+            AlphaAnimation fadeEffect = new AlphaAnimation(1.0f, 0.0f);
+            fadeEffect.setDuration(TRANSPARENCY_EFFECT_DURATION);
+            fadeEffect.setFillAfter(true);
+            greetingTextView.setAnimation(fadeEffect);
         }
 
     }
